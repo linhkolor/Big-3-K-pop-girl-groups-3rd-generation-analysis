@@ -1,0 +1,26 @@
+---
+title: "spotify"
+author: "Kolor Nguyen"
+date: "1/21/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(spotifyr)
+Sys.setenv(SPOTIFY_CLIENT_ID = 'a26a0f25e5df451f851ad3897235abb7')
+Sys.setenv(SPOTIFY_CLIENT_SECRET = '1f6680df6af048a58ee21cf69f0ad227')
+blackpink <- get_artist_audio_features('blackpink')
+redvelvet <- get_artist_audio_features('red velvet')
+twice <- get_artist_audio_features('twice')
+library(tidyverse)
+```
+
+
+```{r}
+ggplot() +geom_histogram(aes(x=blackpink$danceability,y=..density..), color="black", fill="pink2", alpha=0.8) + geom_histogram(aes(x=redvelvet$danceability,y=..density..), color="black", fill="red", alpha=0.8) + geom_histogram(aes(x=twice$danceability,y=..density..),color="black",fill="sandybrown", alpha=0.8) + geom_density(aes(x = blackpink$danceability),fill="pink2",alpha=0.4,color="deeppink4") + geom_density(aes(x = redvelvet$danceability),fill="red",alpha=0.4,color="red4") + geom_density(aes(x = twice$danceability),fill="sandybrown",alpha=0.4,color="salmon4") + labs(title="Distribution of danceability of top 3 girlgroups' songs",x="Danceability")
+```
+
