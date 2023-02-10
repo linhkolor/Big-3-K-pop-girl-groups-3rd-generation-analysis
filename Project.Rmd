@@ -21,6 +21,11 @@ library(tidyverse)
 
 
 ```{r}
-ggplot() +geom_histogram(aes(x=blackpink$danceability,y=..density..), color="black", fill="pink2", alpha=0.8) + geom_histogram(aes(x=redvelvet$danceability,y=..density..), color="black", fill="red", alpha=0.8) + geom_histogram(aes(x=twice$danceability,y=..density..),color="black",fill="sandybrown", alpha=0.8) + geom_density(aes(x = blackpink$danceability),fill="pink2",alpha=0.4,color="deeppink4") + geom_density(aes(x = redvelvet$danceability),fill="red",alpha=0.4,color="red4") + geom_density(aes(x = twice$danceability),fill="sandybrown",alpha=0.4,color="salmon4") + labs(title="Distribution of danceability of top 3 girlgroups' songs",x="Danceability")
+ggplot() + 
+geom_histogram(aes(x=blackpink$danceability,y=..density..), color="black", fill="pink2", alpha=0.8) + geom_histogram(aes(x=redvelvet$danceability,y=..density..), color="black", fill="red", alpha=0.8) + geom_histogram(aes(x=twice$danceability,y=..density..),color="black",fill="sandybrown", alpha=0.8) + 
+geom_density(aes(x = blackpink$danceability),fill="pink2",alpha=0.4,color="deeppink4") + 
+geom_density(aes(x = redvelvet$danceability),fill="red",alpha=0.4,color="red4") + 
+geom_density(aes(x = twice$danceability),fill="sandybrown",alpha=0.4,color="salmon4") + 
+labs(title="Distribution of danceability of top 3 girlgroups' songs",x="Danceability")
 ```
 
